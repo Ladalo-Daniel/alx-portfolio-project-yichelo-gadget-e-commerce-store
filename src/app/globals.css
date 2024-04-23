@@ -27,14 +27,14 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  background: rgb(73, 163, 233);
+  background: rgb(155, 158, 160);
   width: 5px;
   height: 5px;
   border-radius:50%;
 }
 
 .custom-scrollbar-track::-webkit-scrollbar-track {
-  background: red;
+  background: rgb(180, 171, 171);
 }
 
 .rad-blue {

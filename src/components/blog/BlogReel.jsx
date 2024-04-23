@@ -20,7 +20,7 @@ const BlogReel = ({data}) => {
 
       useEffect( () => {
       if(page){
-        router.push(`/?page=${page}`)
+        router.push(`/blog/?page=${page}`)
       }
      }, [router, page])
 

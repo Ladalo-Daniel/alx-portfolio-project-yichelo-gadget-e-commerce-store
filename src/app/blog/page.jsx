@@ -13,7 +13,7 @@ const BlogPage = async () => {
 
   return (
     < >
-        <Header />
+        {/* <Header /> */}
 
         <section className="  px-4 overflow-hidden rad lg:pt-40 pb-6  w-full object-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
 

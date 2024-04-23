@@ -1,248 +1,166 @@
-"use client";
-import React, { useState, useEffect, useContext } from "react";
-import { usePathname } from "next/navigation";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { MenuIcon, X } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import React, { useEffect, useRef, useState } from 'react'
+import Logo from '../Logo';
+// import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-import styles from "../../utils/styles/Navigation.module.css";
-import { FaAngleDown } from "react-icons/fa";
 
-const links = [
-  // { href: "#about", label: "About Payslate" },
-  // { href: "#features", label: "Features" },
-  { href: "", label: "Blog" },
-  // { href: "#faqs", label: "Faq" },
-  // { href: "#contact", label: "Contact" },
-];
+const navItems = [
+    {
+        name: "Products",
+        link: "/",
+    },
+    {
+        name: "Category",
+        link: "#",
 
-const Header = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [nav, setNav] = useState(false);
+    },
+    {
+        name: "Brands",
+        link: "#",
 
-  useEffect(() => {
-    setNav(true); // Set nav to true initially to make the navbar white
-  }, []);
+    },
+    {
+        name: "About us",
+        link: "#",
 
-  const handleHamburger = (e) => {
-    e.preventDefault();
-    setIsActive(!isActive);
-  };
+    },
+    
+]
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      //access to window
-      const changeBackground = () => {
-        if (window.scrollY >= 95) {
-          setNav(true);
-        } else {
-          setNav(false);
-        }
-      };
+function Header() {
 
-      window.addEventListener("scroll", changeBackground);
+    const [mobileNav, setMobileNav] = useState(false)
+    const [nav, setNav] = useState(false);
+    const navRef = useRef(null)
+
+    const handleMobileOpen = () => {
+        setMobileNav(!mobileNav)
     }
-  }, []);
 
-  const pathname = usePathname();
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        //access to window
+        const changeBackground = () => {
+          if (window.scrollY >= 80) {
+            setNav(true);
+          } else {
+            setNav(false);
+          }
+        };
+  
+        window.addEventListener("scroll", changeBackground);
+      }
+    }, []);
+
+    const rounter = useRouter()
+    const path = usePathname()
+    console.log(path)
+
+
 
   return (
-    <div className="bg-transparent">
-      <nav
-        className={
-          nav
-            ? `${styles.nav} ${styles.active} ${styles.fixedTop} py-4 lg:py-6 top-0 lg:bg-netWhite z-[998] shadow-md lg:mx-10 mx-5 mt-5 rounded-[40px] `
-            : `${styles.nav} ${styles.fixedTop} top-0 lg:bg-netWhite z-[998] shadow-md py-4 lg:py-6  lg:mx-10 mx-5  mt-5 rounded-[40px] `
-        }
-      >
-        <div
-          className={`${
-            isActive ? "h-[28rem] lg:h-auto" : "h-auto"
-          } lg:max-w-[1920px] w-full px-4 mx-auto lg:px-20 `}
-        >
-          <div className="flex justify-between">
-            <div className="flex lg:justify-between lg:items-center lg:w-full">
-              <div className="">
-                <Link href={"/"}>
-                  <Image
-                    className="w-8 h-auto object-cover"
-                    src="/logo.png"
-                    width={100}
-                    height={50}
-                    alt="Netrix Logo"
-                  />
-                </Link>
-              </div>
-
-              <div className="hidden lg:flex lg:w-[910px] lg:pl-14  justify-end">
-                {" "}
-                {/* lg:px-48 */}
-                <ul className="text-black lg:flex lg:justify-end items-center">
-                  {links.map((link) => (
-                    <li
-                      key={link.label}
-                      className="lg:text-lg lg:mr-6 font-thin text-payWhite cursor-pointer"
-                    >
-                      <Link href={`/${link.href}`}>{link.label}</Link>
-                    </li>
-                  ))}
-                  <div className="dropdown inline-block relative">
-                    <button className="  group px-4 rounded inline-flex gap-2 items-center">
-                      <span className="lg:text-lg  font-thin text-payWhite">
-                        Get Started
-                      </span>
-                      <FaAngleDown className="text-payWhite group-hover:rotate-180" />
-                    </button>
-                    <ul className="dropdown-menu rounded-b text-black shadow-md bg-white text-left absolute hidden p-2 min-w-[15rem]">
-                      <li className="d-link w-full p-2">
-                        <Link
-                          target="_blank"
-                          href="https://user.payslate.com.ng"
-                          className=" text-sm block w-full"
-                        >
-                          Become a User
-                        </Link>
-                      </li>
-                      <li className="d-link w-full p-2">
-                        <Link
-                          target="_blank"
-                          href="https://organization.payslate.com.ng"
-                          className=" text-sm block w-full"
-                        >
-                          Become an Organisation
-                        </Link>
-                      </li>
-                    </ul>
-                            
-                  </div>
-                  {/* <ScrollLink to="organisation" smooth={true} duration={500}>
-                    <button className="text-payBlue font-bold text-xl bg-white px-10 py-3 ml-4 rounded-[5rem]">
-                      {" "}
-                      Use Payslate
-                    </button>
-                  </ScrollLink> */}
-                  <div className="grow"></div>
-                </ul>
-              </div>
+    <nav className={`flex  px-1 lg:px-0 flex-row items-center max-w-7xl mx-auto  justify-between z-50 ${nav ? "bg-slate-50 transition-all" : "bg-white"} w-full  h-[80px] fixed top-0 `}>
+        {/* IMAGELOGO_HERE */}
+        <div className=' flex flex-row gap-2 items-center px-5'>
+            <div className=' lg:hidden' onClick={handleMobileOpen}>
+                {
+                    mobileNav ? 
+                    (
+                     <X size={50} className=' text-gray-500 rounded-md ring-1 ring-orange-800 cursor-pointer' />
+                    ) :
+                    (
+                     <MenuIcon size={50} className=' text-gray-500 p-2  rounded-md ring-1 ring-orange-800 cursor-pointer' />
+                    ) &&
+                    (
+                     <MenuIcon size={40} className=' text-gray-500 p-2  rounded-md ring-1 ring-orange-800 cursor-pointer' />
+                    )
+                }
             </div>
-
-            {/* mobile */}
-            <div className="flex items-center pr-3 lg:hidden">
-              <div
-                className="flex gap-x-2 items-center justify-end flex-end"
-
-                // }}
-              >
-                {/*Toggle locations */}
-
-                <span onClick={handleHamburger} className="lg:hidden">
-                  <svg
-                    className="w-10 "
-                    width="55"
-                    height="34"
-                    viewBox="0 0 55 34"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.93457"
-                      y="0.115662"
-                      width="53.7037"
-                      height="7.76871"
-                      rx="3.88435"
-                      fill="#ffffff"
-                    />
-                    <rect
-                      x="0.93457"
-                      y="25.338"
-                      width="53.7037"
-                      height="7.76871"
-                      rx="3.88435"
-                      fill="#ffffff"
-                    />
-                    <rect
-                      x="0.93457"
-                      y="12.7268"
-                      width="35.4283"
-                      height="7.76871"
-                      rx="3.88435"
-                      fill="#ffffff"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
+            <Link href={"/"} className=' max-md:hidden'>
+                 <Logo name="ichelo" />
+             </Link>
+            <Link href={"/"} className=' md:hidden' >
+                  <Logo />
+             </Link>
         </div>
 
-        {/* <!-- mobile menu --> */}
-        {isActive && (
-          <aside
-            id="sidebar"
-            className={`lg:hidden bg-netWhite md:w-64 w-full h-[75%] text-white top-[4rem] rounded-lg px-10 pb-10 flex-col absolute flex overflow-y-auto ${
-              isActive ? "translate-x-0 " : "translate-x-full"
-            }`}
-          >
-            <div className="flex h-full w-full">
-              <nav className="flex flex-col gap-5 mt-3 items-start w-full h-full">
-                {links.map((link) => (
-                  <Link
-                    href={link.href}
-                    key={link.href}
-                    onClick={() => {
-                      setIsActive(false);
-                    }}
-                    className="px-4 w-full"
-                  >
-                    <ScrollLink to={link.href} smooth={true} duration={500}>
-                      {" "}
-                      <p className="text-[16px] font-semibold">{link.label}</p>
-                    </ScrollLink>
-                  </Link>
-                ))}
+        {/* DESKTOP_MENU */}
 
-                <ScrollLink to="organisation" smooth={true} duration={500}>
-                  <button className="bg-white w-full flex pl-5 text-payBlue p-2 rounded-xl text-sm">
-                    Use Payslate
-                  </button>
-                </ScrollLink>
-                <div className="dropdown inline-block relative">
-                  <button className=" py-2 group px-4 rounded inline-flex gap-2 items-center">
-                    <span className="lg:text-lg  font-semibold text-payWhite">
-                      Get Started
-                    </span>
-                    <FaAngleDown className="text-payWhite group-hover:rotate-180" />
-                  </button>
-                  <ul className="dropdown-menu rounded-b text-black shadow-md bg-white text-left absolute hidden p-2 min-w-[15rem]">
-                    <li className="d-link w-full p-2">
-                      <Link
-                        target="_blank"
-                        href="https://user.payslate.com.ng"
-                        className=" text-sm block w-full"
-                      >
-                        Become a User
-                      </Link>
-                    </li>
-                    <li className="d-link w-full p-2">
-                      <Link
-                        target="_blank"
-                        href="https://organization.payslate.com.ng"
-                        className=" text-sm block w-full"
-                      >
-                        Become an Organisation
-                      </Link>
-                    </li>
-                  </ul>
-                          
-                </div>
-              </nav>
+      <ul className=' lg:flex flex-row items-center gap-3 hidden  '>
+        {navItems.map((item, idx) => (
+            <li key={idx} >
+                <Link 
+                href={item.link}
+                className={`${path === item.link ? " border-b-2 border-normalorange font-bold  px-6 py-1  text-black duration-100 rounde text-lg " : ""}px-3 text-sm py-  text-gray-600 font-medium duration-100 hover:text-normalorange rounde  `}
+                >{item.name}</Link>
+            </li>
+        ))}
+      </ul>
+       
+       {/* LOGIN_BUTTON */}
+       <div className=' flex flex-row items-center gap-2'>
+        {/* <Link 
+        href="#" 
+        onClick={mobileNav && handleMobileOpen}
+        className='  py-2.5 lg:py-2 text-[#A6A6A6] text-lg font-semibold hover:opacity-90 max-sm:text-sm md:text-lg  px-2 lg:px-4 mr-5'
+        >
+          Login
+        </Link> */}
+        <Link 
+        href="/sign-up" 
+        onClick={mobileNav && handleMobileOpen}
+        className='  py-2.5 lg:py-2 text-white text-lg hover:opacity-80 max-sm:text-sm md:text-lg bg-orange-500  px-2 lg:px-4 mr-5'
+        >
+          Shop Now
+        </Link>
+       </div>
+
+
+      {/* MOBILEMENU */}
+     { 
+       mobileNav &&
+        (    
+            <div ref={navRef} className={ ` ${mobileNav ? "  transition-all transform  w-[264px] duration-1000  shadow-2xl" : ""}   flex flex-col lg:hidden transition-all left-0 w-0   gap-3 top-[0px] absolute bg-slate-100 h-[100vh] px-3 py-4  duration-1000  `}>
+            <X  
+            onClick={mobileNav && handleMobileOpen}
+            size={30}
+            className=' absolute right-2 top-2 ring-1 ring-normalorange p-2 cursor-pointer rounded-md text-gray-500'/>
+
+            <div className=' h-[50px] w-[150px]'>
+            <Link href={"/"}  onClick={handleMobileOpen}>
+                 <Logo name="ichelo" />
+             </Link>
             </div>
-          </aside>
-        )}
-      </nav>
-    </div>
-  );
-};
+            <hr className=' text-green-300' />
+            <div className=' mt-1'>
+                {navItems.map((item, idx) => (
+                    <span key={idx} className=' flex flex-col gap-6' >
+                        <Link 
+                        href={item.link}
+                        onClick={handleMobileOpen}
+                        className={`${path === item.link ? " border-b-2 border-normalorange text-black hover:opacity-75   px-3 py-2.5   duration-100 rounde text-lg " : ""}px-3 text-sm py-2.5  text-gray-600 duration-100 hover:text-sky-800 round  `}
+                        >{item.name}
+                        </Link>
+                    </span>
+                 ))}
+            </div>
 
-export default Header;
+            <hr className=' absolute bottom-8 px-3 py-2 text-lg w-[250px] text-sky-500' />
+
+            <p className=' absolute bottom-2 px-3 py-2 text-lg text-gray-500'>&copy; Yichelo 2024</p>
+
+            
+          </div>
+        )
+      }
+
+
+    </nav>
+  )
+}
+
+export default Header

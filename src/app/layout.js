@@ -19,8 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={sans.className} suppressHydrationWarning={true}>
-        {/* <Header /> */}
-        <div className="overflow-x-hidden rad object-cover bg-no-repeat bg-center   w-full">
+        <Header />
+        <div className="overflow-x-hidden bg-blue-800    w-full">
           <Provider>
            {children}
           </Provider>

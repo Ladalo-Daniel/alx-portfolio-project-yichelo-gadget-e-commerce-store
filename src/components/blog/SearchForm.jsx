@@ -46,7 +46,7 @@ const SearchForm = () => {
             </svg>
             <input
                 type="search"
-                placeholder="Search for posts..."
+                placeholder="Search for any gadget..."
                 className="w-[75vw] md:w-[400px] lg:w-[400px] py-3 pl-12 pr-4 text-gray-900 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-blue-200"
                 value={searchTerm}
                 onChange={handleSearchChange}
