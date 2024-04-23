@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rad {
+  background: url("../../public/hero-bg.png"),
+    radial-gradient(
+      circle,
+      rgba(227, 249, 241, 1) 61%,
+      rgba(242, 253, 234, 1) 85%
+    );
+  background-size: cover;
+  background-position: center;
+}
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.d-link:hover {
+  background: rgb(0, 168, 220);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 168, 220, 1) 61%,
+    rgba(174, 219, 4, 1) 85%
+  );
+  color: #fff;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  background: rgb(73, 163, 233);
+  width: 5px;
+  height: 5px;
+  border-radius:50%;
+}
+
+.custom-scrollbar-track::-webkit-scrollbar-track {
+  background: red;
+}
+
+.rad-blue {
+  background: url("../../public/background.png");
+  background-color: #00a8dc;
+  background-size: cover;
+  background-position: center;
+}
+
+.users {
+  background: radial-gradient(
+    circle,
+    rgba(227, 249, 241, 1) 61%,
+    rgba(242, 253, 234, 1) 85%
+  );
+  background-size: cover;
+  background-position: center;
+}
+.blueGreen {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 168, 220, 1) 34%,
+    rgba(174, 219, 4, 1) 78%
+  );
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2)
+    
+  }
+ 
+  100% {
+    transform: rotate(360deg);
+    
+  }
+}
+
+.wingContainer {
+  animation: spinning infinite 4s ease;
+}
+.modal {
+  background: rgb(0, 168, 220);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 168, 220, 1) 61%,
+    rgba(174, 219, 4, 1) 85%
+  );
+}
