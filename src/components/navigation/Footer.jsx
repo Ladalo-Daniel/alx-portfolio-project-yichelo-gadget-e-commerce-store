@@ -17,19 +17,22 @@ const Footer = () => {
   const d = new Date();
   let year = d.getFullYear();
 
-  const pathname = usePathname();
+
+  const path = usePathname()
+
+  const isAdminRoute = path.startsWith("/admin")
 
   return (
     <>
       <footer
         id="footer"
-        className={`lg:px-20 px-10  pt-4 flex flex-col     shadow-xl bg-gray-700`}
+        className={`lg:px-20 px-10  pt-4 flex flex-col ${isAdminRoute ? "hidden" : "block"} shadow-xl bg-gray-900`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-x-4 items-start py-10 border-b border-payWhite">
           <div className="lg:flex lg:w-2/5  pb-5 lg:pb-0">
             <div className=" w-full ">
               <Link href={"/"}>
-                <Logo name="Yichelo" />
+                <Logo name="ichelo" />
               </Link>
             </div>
           </div>

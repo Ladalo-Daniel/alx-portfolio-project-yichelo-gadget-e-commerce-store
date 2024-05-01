@@ -51,7 +51,7 @@ const SideMenu = ({profile}) => {
     <ul className=' text-white overflow-y-auto'>
      {navigation.map((nav, idx) => (
         <li key={nav.link} className=' py-2 pr-4 gap-4 flex flex-col'>
-          <Link href={nav.link} className={` ${path === nav.link ? "bg-payBlue text-payWhite hover:opacity-90" : "bg-white"} p-3 shadow-lg text-gray-500 hover:text-white hover:bg-payBlue rounded-r-2xl flex flex-row gap-2`}>
+          <Link href={nav.link} className={` ${path === nav.link ? "bg-orange-600 text-payWhite hover:opacity-90" : "bg-white"} p-3 shadow-lg text-gray-500 hover:text-white hover:bg-orange-600 rounded-r-2xl flex flex-row gap-2`}>
             <span>{nav.icon}</span>
             <span>{nav.name}</span>
           </Link>

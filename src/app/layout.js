@@ -2,6 +2,7 @@ import { DM_Sans } from 'next/font/google';
 import './globals.css'
 import Provider from "../components/Providers"
 import Header from '../components/navigation/Header';
+import Footer from '../components/navigation/Footer';
 
 
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
           </Provider>
         </div>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

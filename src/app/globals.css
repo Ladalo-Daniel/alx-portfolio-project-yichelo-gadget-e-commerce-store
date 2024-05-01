@@ -6,8 +6,8 @@
   background: url("../../public/hero-bg.png"),
     radial-gradient(
       circle,
-      rgba(227, 249, 241, 1) 61%,
-      rgba(242, 253, 234, 1) 85%
+      rgb(238, 180, 139) 61%,
+      rgb(240, 158, 91) 85%
     );
   background-size: cover;
   background-position: center;

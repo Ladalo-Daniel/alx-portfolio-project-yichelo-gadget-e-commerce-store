@@ -58,12 +58,15 @@ function Header() {
 
     const rounter = useRouter()
     const path = usePathname()
-    console.log(path)
+
+    const isAdminRoute = path.startsWith("/admin")
+    // console.log("ADMIN",isAdminRoute)
+    // console.log("PATH",path)
 
 
 
   return (
-    <nav className={`flex  px-1 lg:px-0 flex-row items-center max-w-7xl mx-auto  justify-between z-50 ${nav ? "bg-slate-50 transition-all" : "bg-white"} w-full  h-[80px] fixed top-0 `}>
+    <nav className={`flex ${isAdminRoute ? "hidden" : "block"}  px-1 lg:px-0 flex-row items-center max-w-7xl mx-auto  justify-between z-50 ${nav ? "bg-slate-50 transition-all" : "bg-white"} w-full  h-[80px] fixed top-0 `}>
         {/* IMAGELOGO_HERE */}
         <div className=' flex flex-row gap-2 items-center px-5'>
             <div className=' lg:hidden' onClick={handleMobileOpen}>

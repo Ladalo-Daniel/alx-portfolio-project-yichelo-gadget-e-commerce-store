@@ -18,11 +18,11 @@ const BlogPage = async () => {
     <main className="" >
         {/* <Header /> */}
 
-        <section className="   px-4 overflow-hidden rad max-lg:pt-9 mt-10 lg:pt-16 pb-6  w-full object-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
+        <section className="   px-4 overflow-hidden rad  max-lg:pt-9 mt-10 lg:pt-16 pb-6  w-full object-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
 
-            <header className="  px-4 overflow-hidden max-w-[1280px] relative  pb-6 gap-6  w-full object-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
-                <h1 className='text-[#1E1E1E] font-bold text-5xl md:text-5xl text-center max-sm:text-3xl'>Welcome to Yichelo Gadgets <br /> And Digital Accesories Hub</h1>
-                <p className='text-[#000000] md:text-lg hidden md:block text-center'>With a focus on convenience, reliability, and a diverse product catalog, <br /> We aim to become a go-to destination for all things tech-related in the online marketplace.
+            <header className="  px-4 overflow-hidden max-w-[1280px] relative  pb-6 gap-6 max-md:pt-7  w-full object-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
+                <h1 className='text-[#1E1E1E] font-bold  md:text-5xl text-center max-sm:text-lg'>Welcome to Yichelo Gadgets <br /> And Digital Accesories Hub</h1>
+                <p className='text-[#000000] md:text-lg text-sm md:block text-center'>With a focus on convenience, reliability, and a diverse product catalog, <br /> We aim to become a go-to destination for all things tech-related in the online marketplace.
                 </p>
                 <SearchForm />
             </header>
@@ -52,7 +52,7 @@ const BlogPage = async () => {
 
         <SubscribeForEmail /> */}
 
-        <Footer />
+        {/* <Footer /> */}
 
     </main>
   )
