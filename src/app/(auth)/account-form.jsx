@@ -131,7 +131,7 @@ export default function AccountForm({session, profile, setOpenModal, isCreate, i
           { ...register("username") }
           type="text" 
           placeholder='Username here' 
-          className='w-full p-4 sm:text-xl font-thin outline-blue-400 border-blue-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
+          className='w-full p-4 sm:text-xl font-thin outline-orange-400 border-orange-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
           <span className="text-red-600 py-0.5 pl-4 text-xs md:text-sm ">{errors.username?.message}</span>
         </div>
         <div className="flex flex-col items-start">
@@ -140,7 +140,7 @@ export default function AccountForm({session, profile, setOpenModal, isCreate, i
           { ...register("first_name") }
           type="text" 
           placeholder='Firstname here' 
-          className='w-full p-4 sm:text-xl font-thin outline-blue-400 border-blue-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
+          className='w-full p-4 sm:text-xl font-thin outline-orange-400 border-orange-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
           <span className="text-red-600 py-0.5 pl-4 text-xs md:text-sm ">{errors.first_name?.message}</span>
         </div>
         <div className="flex flex-col items-start">
@@ -149,7 +149,7 @@ export default function AccountForm({session, profile, setOpenModal, isCreate, i
           { ...register("last_name") }
           type="text" 
           placeholder='Lastname here' 
-          className='w-full p-4 sm:text-xl font-thin outline-blue-400 border-blue-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
+          className='w-full p-4 sm:text-xl font-thin outline-orange-400 border-orange-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
           <span className="text-red-600 py-0.5 pl-4 text-xs md:text-sm ">{errors.last_name_name?.message}</span>
         </div>
         <div className="flex flex-col items-start">
@@ -158,7 +158,7 @@ export default function AccountForm({session, profile, setOpenModal, isCreate, i
           { ...register("position") }
           type="text" 
           placeholder='Position here' 
-          className='w-full p-4 sm:text-xl font-thin outline-blue-400 border-blue-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
+          className='w-full p-4 sm:text-xl font-thin outline-orange-400 border-orange-300 outline-1 rounded-xl placeholder:text-slate-400 focus:outline ' />
           <span className="text-red-600 py-0.5 pl-4 text-xs md:text-sm ">{errors.position?.message}</span>
         </div>
         <div className="flex flex-col items-start">
@@ -168,11 +168,11 @@ export default function AccountForm({session, profile, setOpenModal, isCreate, i
           type="text" 
           disabled={true}
           placeholder='Email here' 
-          className='w-full p-4 sm:text-xl font-thin rounded-xl outline-1 border-blue-300 placeholder:text-slate-400 focus:outline outline-blue-400' />
+          className='w-full p-4 sm:text-xl font-thin rounded-xl outline-1 border-orange-300 placeholder:text-slate-400 focus:outline outline-orange-400' />
           <span className="text-red-600 py-0.5 pl-4 text-xs md:text-sm ">{errors.email?.message}</span>
         </div>
 
-        <button className='text-base font-bold md:min-w-[20rem] sm:text-xl px-16 py-3 hover:opacity-70 capitalize bg-payBlue text-white rounded-[1.5rem]'>
+        <button className='text-base font-bold md:min-w-[20rem] sm:text-xl px-16 py-3 hover:opacity-70 capitalize bg-orange-600 text-white rounded-[1.5rem]'>
            {isUpdating ? "Please wait..." : isEdit ? "Edit" : "Submit"}
         </button>
       </form>

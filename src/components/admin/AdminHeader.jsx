@@ -8,6 +8,7 @@ import React, { useRef, useState } from 'react'
 import Modal from '../modal/Modal'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Logo from '../Logo'
 
 
 const navigation = [
@@ -96,13 +97,15 @@ const AdminHeader = ({profile}) => {
   return (
         <header className="h-auto bg-payWhite py-5 px-9 sticky max-md:fixed top-0 w-full flex justify-between z-30">
           <Link href="/">
-            <Image
+            {/* <Image
                 className="w-8 h-auto object-cover "
                 src="/payLogo.png"
                 width={100}
                 height={50}
                 alt="Netrix Logo"
-                />
+                /> */}
+
+                <Logo name="ichelo" />
           </Link>
           <div className=' flex flex-row items-center gap-4'>
                 <button onClick={handleOpenModal} className=' rounded-lg ring-red-400 hover:bg-red-50 p-2 text-gray-900 ring-1'>

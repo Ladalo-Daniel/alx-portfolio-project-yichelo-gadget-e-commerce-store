@@ -6,6 +6,7 @@ import { getUserSession } from '../../../services/session'
 import { redirect } from 'next/navigation'
 import { getUserProfile } from '../../../utils/shared/Profile'
 import MiniLoader from '../../../components/MiniLoader'
+import Logo from '../../../components/Logo'
 
 export default async function Account() {
   const profile = await getUserProfile() 
@@ -16,7 +17,7 @@ export default async function Account() {
   
   // console.log(profile)
   
-  if (!session?.user) redirect("/sign-up")
+  // if (!session?.user) redirect("/sign-up")
   if (profile?.data?.onboarded && profile?.data?.role === "admin" && session?.user) redirect("/admin")
   
 
@@ -24,13 +25,15 @@ export default async function Account() {
           <div className=' max-md:w-[90vw] self-center mx-auto p-9 bg-payWhite m-9 rounded-md'>
 
             <div className=' flex flex-col space-y-5 mb-4 mt-2'>
-              <Image
+              {/* <Image
                 className="w-8 h-auto object-cover self-center "
                 src="/payLogo.png"
                 width={100}
                 height={50}
                 alt="Netrix Logo"
-              />
+              /> */}
+
+              <Logo name="ichelo" />
               <h2 className="md:text-3xl text-center font-medium text-black">Complete your profile to continue</h2>
             </div>
             {/* {profile === undefined && <MiniLoader />} */}

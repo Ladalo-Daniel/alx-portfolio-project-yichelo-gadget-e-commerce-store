@@ -31,7 +31,7 @@ const CreateBlogForm = ({profile, blog, isEdit, isCreate, setOpenModal}) => {
     image: blog?.image_url || [],
     tags: blog?.tags || '',
     minutes_read: blog?.minutes_read || '',
-    author: profile?.data?.username,
+    author: profile?.data?.username || "Daniel",
   };
 
   const [formData, setFormData] = useState(initialFormData);

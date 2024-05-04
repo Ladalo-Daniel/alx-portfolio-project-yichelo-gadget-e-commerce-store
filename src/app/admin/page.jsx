@@ -20,7 +20,7 @@ const AdminPage = async () => {
         tag: "Blogs",
         link: "/admin/all-blogs",
         icon: <Atom />,
-        bg:"bg-payBlue"
+        bg:"bg-orange-600"
     },
     {
         // count: "+",

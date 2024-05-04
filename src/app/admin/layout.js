@@ -20,12 +20,12 @@ export default async function Layout({ children }) {
 
   // console.log("Heloo", profile)
 
-  if (profile === undefined) redirect("/sign-up")
+  // if (profile === undefined) redirect("/sign-up")
   if(profile?.data?.role === null) redirect("/")
 
   return (
      <Suspense fallback={<Loading />}>
-        <main className='flex blueGreen flex-col md:flex-row min-h-screen overflow-hidden max-w-7xl mx-auto'>
+        <main className='flex blueGree flex-col md:flex-row min-h-screen overflow-hidden max-w-7xl mx-auto'>
           <SideMenu profile={profile?.data} />
           <main className="relative h-screen flex flex-col flex-1 w-full custom-scrollbar overflow-y-auto bg-[#F1F1F1] ">
             <AdminHeader profile={profile?.data} />

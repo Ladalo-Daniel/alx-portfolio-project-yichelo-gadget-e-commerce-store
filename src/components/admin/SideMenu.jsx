@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
+import Logo from '../Logo'
 
 const navigation = [
     {
@@ -60,13 +61,14 @@ const SideMenu = ({profile}) => {
      
     </ul>
     <div className=' bottom-0 absolute flex flex-row gap-2 items-center ml-11 justify-center shadow-inner p-2 m-2 '>
-      <Image
+      {/* <Image
         className="w-8 h-auto object-cover"
         src="/payLogo.png"
         width={100}
         height={50}
         alt="Netrix Logo"
-        />
+        /> */}
+        <Logo name="" />
        <p className=' text-gray-500 p-2'>&copy; Payslate 2024</p>
     </div>
    </aside>
