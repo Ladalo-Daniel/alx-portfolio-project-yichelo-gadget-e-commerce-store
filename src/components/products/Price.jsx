@@ -9,7 +9,8 @@ export default function Price({ price, id, options }) {
     const [total, setTotal] = useState(price);
     const [quantity, setQuantity] = useState(1);
     const [selected, setSelected] = useState(0);
-
+    
+    //useeffect to rerender the page as the varaibles iin the depency array changes
     useEffect(() => {
         setTotal(quantity * (options ? price + options[selected].additionalPrice : price))
     }, [quantity, selected, options, price])
