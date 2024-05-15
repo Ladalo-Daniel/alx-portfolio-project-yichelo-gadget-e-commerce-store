@@ -20,6 +20,7 @@ const Footer = () => {
 
   const path = usePathname()
 
+   //this is a varaible that check for an active route
   const isAdminRoute = path.startsWith("/admin")
 
   return (
