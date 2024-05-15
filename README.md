@@ -11,6 +11,10 @@ Main  project link [https://alx-portfolio-project-yichelo-gadget-e-commerce-stor
 
  Landing page project link [https://alx-yichelo-landing-page.vercel.app/](https://alx-yichelo-landing-page.vercel.app/)
 
+
+
+ My Blog post Link link [https://dev.to/ladalodaniel/introducing-yichelo-your-destination-for-tech-gadgets-25o1/](https://dev.to/ladalodaniel/introducing-yichelo-your-destination-for-tech-gadgets-25o1)
+
 <p>The Image below is the project image</p>
   <br />
       <img src="/img/1.png" alt="Sample Image">
